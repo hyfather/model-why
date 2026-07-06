@@ -1,0 +1,1 @@
+export function StatsStrip({green,lurches,streak}:{green:number;lurches:number;streak:number}){return <div className="stats"><span><b>{Math.round(green)}%</b> smooth</span><span><b>{lurches}</b> lurches</span><span><b>{Math.round(streak)}s</b> best streak</span></div>}

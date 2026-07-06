@@ -1,0 +1,1 @@
+import {QRCodeSVG}from'qrcode.react';export function Unsupported(){return <main className="center page"><div className="icon">↗</div><h2>Take this for a drive</h2><p>Open SmoothDrive in Safari on your iPhone. Motion sensors need a phone and a secure HTTPS connection.</p><div className="qr"><QRCodeSVG value={location.href} size={180}/></div></main>}

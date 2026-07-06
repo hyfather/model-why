@@ -11,3 +11,25 @@
 .direction-label.top{top:10px}.direction-label.bottom{bottom:10px}
 .zero-line b{position:absolute;right:-17px;top:-7px;font:9px DM Mono;color:#d8fff0}
 .metric-column:first-child .zero-line b{right:auto;left:-17px}
+
+.calibration{display:grid;place-items:center;background:radial-gradient(circle at 50% 25%,#153526,#07110d 55%)}
+.calibration-card{width:min(100%,520px);text-align:center;display:flex;flex-direction:column;align-items:center}
+.calibration-card .ring{margin:12px 0 24px}
+.calibration-card h2{font-size:clamp(30px,8vw,46px);letter-spacing:-.045em;margin:0 0 12px}
+.calibration-card p{max-width:410px;color:#9aada2;line-height:1.55;margin:0 0 20px}
+.calibration-tip{width:100%;padding:13px 15px;border:1px solid #294638;border-radius:12px;color:#789184;background:#0d1c16;font-size:12px;line-height:1.45}
+.calibration-tip.safe{border-color:#5c4e27;color:#b8a76e;background:#201d11}
+.calibration-debug,.telemetry{font:9px DM Mono,monospace;color:#64736b;letter-spacing:.015em}
+.calibration-debug{display:block;margin-top:22px;min-height:14px}
+.mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;margin:8px 0 18px}
+.mode-grid button{min-height:145px;text-align:left;border:1px solid #2b493a;border-radius:18px;background:#0d1d16;color:#edf7f0;padding:20px;display:flex;flex-direction:column;justify-content:space-between}
+.mode-grid button:active{border-color:var(--green);background:#112a1d}
+.mode-grid b{font-size:17px}.mode-grid span{font-size:11px;line-height:1.45;color:#82968b}
+.mode-label{display:block;margin-top:2px;font:7px DM Mono;color:#60756a;letter-spacing:.16em}
+.telemetry{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;white-space:nowrap;padding:0 4px}
+.telemetry span+span:before{content:'·';margin-right:7px;color:#37463e}
+.frame-warning{border:1px solid #7b6330;background:#211d12;color:#e0c565;border-radius:10px;padding:8px;font-size:10px}
+.debug{color:#818e87;border-color:#38433d;background:#070b09f2;font-size:9px}
+.debug summary{color:#818e87}
+.live{grid-template-rows:auto auto minmax(0,1fr) auto auto auto;gap:7px}
+@media(max-width:390px){.visual{gap:9px}.metric-heading span{font-size:8px}.telemetry{font-size:8px}}

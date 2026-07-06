@@ -2,7 +2,7 @@ import { COMFORT, accelerationBand, jerkBand } from '../config/comfort';
 
 type Metric = 'acceleration' | 'jerk';
 
-export function BigBar({ value, metric, showNumber }: { value: number; metric: Metric; showNumber: boolean }) {
+export function BigBar({ value, metric, showNumber, directional = true }: { value: number; metric: Metric; showNumber: boolean; directional?: boolean }) {
   const isAcceleration = metric === 'acceleration';
   const max = isAcceleration ? COMFORT.acceleration.displayMax : 4;
   const amount = Math.min(1, Math.abs(value) / max);
@@ -17,8 +17,8 @@ export function BigBar({ value, metric, showNumber }: { value: number; metric: M
     </header>
     <div className="bar-shell" data-metric={metric} aria-label={`${metric} ${value.toFixed(1)} ${unit}`}>
       <div className="bar-fill" data-band={band} style={{ height: `${amount * 50}%`, bottom: positive ? '50%' : 'auto', top: positive ? 'auto' : '50%' }} />
-      <span className="direction-label top">{isAcceleration ? 'ACCEL' : 'RISING'}</span>
-      <span className="direction-label bottom">{isAcceleration ? 'BRAKE' : 'FALLING'}</span>
+      <span className="direction-label top">{directional ? isAcceleration ? 'ACCEL' : 'RISING' : isAcceleration ? 'MOTION' : 'JOLT'}</span>
+      <span className="direction-label bottom">{directional ? isAcceleration ? 'BRAKE' : 'FALLING' : 'CALM'}</span>
       <span className="zero-line"><b>0</b></span>
     </div>
   </section>;
